@@ -11,13 +11,13 @@
     - install
     - uninstall
 
-- name: Include tasks to install dependencies
-  ansible.builtin.include_tasks: install_deps.yml
-  when:
-    - runner_state|lower == "started" or runner_state|lower == "stopped"
-    - github_actions_system == "linux"
-  tags:
-    - install
+#- name: Include tasks to install dependencies
+#  ansible.builtin.include_tasks: install_deps.yml
+#  when:
+#    - runner_state|lower == "started" or runner_state|lower == "stopped"
+#    - github_actions_system == "linux"
+#  tags:
+#    - install
 
 - name: Include tasks to uninstall runner (UNIX-like)
   ansible.builtin.include_tasks: uninstall_runner_unix.yml
